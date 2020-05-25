@@ -65,7 +65,8 @@ function getNumberPhone(identifier)
         ['@identifier'] = identifier
     })
     if result[1] ~= nil then
-
+        UserCachePhone[result[1].phone_number] = {ids = identifier, phone = result[1].phone_number}
+        UserCacheIdentifier[identifier] = {ids = identifier, phone = result[1].phone_number}
         return result[1].phone_number
     end
     return nil
