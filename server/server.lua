@@ -61,6 +61,9 @@ end
 
 
 function getNumberPhone(identifier)
+    if UserCacheIdentifier[identifier] ~= nil then
+        return UserCacheIdentifier[identifier].phone
+    end
     local result = MySQL.Sync.fetchAll("SELECT player_account.phone_number FROM player_account WHERE player_account.player_identifier = @identifier", {
         ['@identifier'] = identifier
     })
