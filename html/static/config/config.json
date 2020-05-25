@@ -102,8 +102,8 @@
                     }
                 },
                 {
-                    "title": "Call emergency number",
-                    "eventName": "gcphone:autoCallNumber",
+                    "title": "Envoyer un message d'urgence",
+                    "eventName": "core:SendMsgToJob",
                     "type": {
                         "number": "police",
                         "message": "Un citoyen à besoin d'aide."
