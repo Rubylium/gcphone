@@ -102,8 +102,8 @@
                     }
                 },
                 {
-                    "title": "Call emergency number",
-                    "eventName": "gcphone:autoCallNumber",
+                    "title": "Envoyer un message d'urgence",
+                    "eventName": "core:SendMsgToJob",
                     "type": {
                         "number": "police",
                         "message": "Un citoyen à besoin d'aide."
@@ -689,7 +689,7 @@
             "PHONE_WARNING_MESSAGE": "recuerdo",
             "PHONE_WARNING_MESSAGE_MESS": "noticias",
             "CONFIRM": "Aceptar",
-            "CANCEL": "Cancelar",
+            "CANCEL": "Annuler",
             "APP_CONFIG_TITLE": "Ajustes",
             "APP_CONFIG_MY_MUNBER": "Mi número",
             "APP_CONFIG_WALLPAPER": "Fondo pantalla",
@@ -716,7 +716,7 @@
             "APP_CONTACT_NEW": "Nuevo contacto",
             "APP_CONTACT_EDIT": "Cambiar el contacto",
             "APP_CONTACT_SAVE": "Guardar",
-            "APP_CONTACT_CANCEL": "Cancelar",
+            "APP_CONTACT_CANCEL": "Annuler",
             "APP_CONTACT_DELETE": "Borrar",
             "APP_CONTACT_LABEL_NAME": "Nombre",
             "APP_CONTACT_LABEL_NUMBER": "Número",
@@ -739,7 +739,7 @@
             "APP_DARKTCHAT_DELETE_CHANNEL": "Borrar el canal",
             "APP_DARKTCHAT_NEW_NOTE": "Añadir un nota",
             "APP_DARKTCHAT_DELETE_NOTE": "Borrar la nota",
-            "APP_DARKTCHAT_CANCEL": "Cancelar",
+            "APP_DARKTCHAT_CANCEL": "Annuler",
             "APP_DARKTCHAT_PLACEHOLDER_ENTER_MESSAGE": "Escriba un mensaje",
             "APP_TWITTER_NAME": "Twitter",
             "APP_TWITTER_VIEW_TWITTER": "Twitter",
@@ -761,7 +761,7 @@
             "APP_TWIITER_ACCOUNT_SAVE": "matriculación",
             "APP_MESSAGE_SEND_PHOTO": "Enviar foto",
             "APP_TWIITER_ACCOUNT_CREATE": "Crear la cuenta",
-            "APP_TWIITER_ACCOUNT_CANCEL": "interrumpir",
+            "APP_TWIITER_ACCOUNT_CANCEL": "Annuler",
             "APP_TWITTER_ACCOUNT_USERNAME": "nombre de usuario",
             "APP_TWITTER_ACCOUNT_PASSWORD": "contraseña",
             "APP_TWITTER_NOTIFICATION": "Ajustes",
@@ -787,7 +787,7 @@
             "APP_BANK_TITLE_BALANCE": "Saldo en la cuenta",
             "APP_BANK_TITLE_ENTER_MONEY": "Número de cuenta",
             "APP_BANK_BUTTON_TRANSFER": "Transferencia",
-            "APP_BANK_BUTTON_CANCEL": "Cancelar",
+            "APP_BANK_BUTTON_CANCEL": "Annuler",
 
             "TIMEAGO": [
                 "ahora", ["hace %s segundo", "hace %s segundos"],

@@ -50,6 +50,8 @@ function getSourceFromIdentifier(identifier, cb)
 end
 
 
+local UserCachePhone = {}
+local UserCacheIdentifier = {}
 function GetLicense(source)
     for _, id in ipairs(GetPlayerIdentifiers(source)) do
         return id
@@ -59,15 +61,25 @@ end
 
 
 function getNumberPhone(identifier)
+    if UserCacheIdentifier[identifier] ~= nil then
+        return UserCacheIdentifier[identifier].phone
+    end
     local result = MySQL.Sync.fetchAll("SELECT player_account.phone_number FROM player_account WHERE player_account.player_identifier = @identifier", {
         ['@identifier'] = identifier
     })
     if result[1] ~= nil then
+        UserCachePhone[result[1].phone_number] = {ids = identifier, phone = result[1].phone_number}
+        UserCacheIdentifier[identifier] = {ids = identifier, phone = result[1].phone_number}
         return result[1].phone_number
     end
     return nil
 end
+
+
 function getIdentifierByPhoneNumber(phone_number) 
+    if UserCachePhone[phone_number] ~= nil then
+        return UserCachePhone[phone_number].ids
+    end
     local result = MySQL.Sync.fetchAll("SELECT player_account.player_identifier FROM player_account WHERE player_account.phone_number = @phone_number", {
         ['@phone_number'] = phone_number
     })
@@ -565,7 +577,6 @@ end)
 --====================================================================================
 RegisterNetEvent("rF:spawn")
 AddEventHandler('rF:spawn',function()
-    Wait(1000)
     local sourcePlayer = tonumber(source)
     local identifier = getPlayerID(source)
     getOrGeneratePhoneNumber(sourcePlayer, identifier, function (myPhoneNumber)
@@ -590,7 +601,7 @@ end)
 
 
 AddEventHandler('onMySQLReady', function ()
-    -- MySQL.Async.fetchAll("DELETE FROM phone_messages WHERE (DATEDIFF(CURRENT_DATE,time) > 10)")
+    MySQL.Async.fetchAll("DELETE FROM phone_messages WHERE (DATEDIFF(CURRENT_DATE,time) > 5)")
 end)
 
 --====================================================================================
