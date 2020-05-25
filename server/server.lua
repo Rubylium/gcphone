@@ -74,6 +74,8 @@ function getNumberPhone(identifier)
     end
     return nil
 end
+
+
 function getIdentifierByPhoneNumber(phone_number) 
     if UserCachePhone[phone_number] ~= nil then
         return UserCachePhone[phone_number].ids
@@ -575,7 +577,6 @@ end)
 --====================================================================================
 RegisterNetEvent("rF:spawn")
 AddEventHandler('rF:spawn',function()
-    Wait(1000)
     local sourcePlayer = tonumber(source)
     local identifier = getPlayerID(source)
     getOrGeneratePhoneNumber(sourcePlayer, identifier, function (myPhoneNumber)
@@ -600,7 +601,7 @@ end)
 
 
 AddEventHandler('onMySQLReady', function ()
-    -- MySQL.Async.fetchAll("DELETE FROM phone_messages WHERE (DATEDIFF(CURRENT_DATE,time) > 10)")
+    MySQL.Async.fetchAll("DELETE FROM phone_messages WHERE (DATEDIFF(CURRENT_DATE,time) > 5)")
 end)
 
 --====================================================================================
