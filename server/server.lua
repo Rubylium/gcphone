@@ -50,7 +50,8 @@ function getSourceFromIdentifier(identifier, cb)
 end
 
 
-local UserCache = {}
+local UserCachePhone = {}
+local UserCacheIdentifier = {}
 function GetLicense(source)
     for _, id in ipairs(GetPlayerIdentifiers(source)) do
         return id
@@ -64,6 +65,7 @@ function getNumberPhone(identifier)
         ['@identifier'] = identifier
     })
     if result[1] ~= nil then
+
         return result[1].phone_number
     end
     return nil
