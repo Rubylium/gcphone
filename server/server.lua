@@ -565,6 +565,7 @@ end)
 --====================================================================================
 RegisterNetEvent("rF:spawn")
 AddEventHandler('rF:spawn',function()
+    Wait(1000)
     local sourcePlayer = tonumber(source)
     local identifier = getPlayerID(source)
     getOrGeneratePhoneNumber(sourcePlayer, identifier, function (myPhoneNumber)
