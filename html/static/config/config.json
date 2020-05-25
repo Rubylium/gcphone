@@ -1,5 +1,5 @@
 {
-    "reseau": "ElBichop",
+    "reseau": "6G",
     "warningMessageCount": 250,
     "themeColor": "#007aff",
     "themeColorTitle": "#f7f7f7",
@@ -156,17 +156,6 @@
     ],
 
     "apps": [{
-            "name": "Twitter",
-            "fr_FR__name": "Twitter",
-            "en_US__name": "Twitter",
-            "de_DE__name": "Twitter",
-            "pl_PL__name": "Twitter",
-            "es_ES__name": "Twitter",
-            "icons": "/html/static/img/icons_app/twitter.png",
-            "routeName": "twitter.splash",
-            "inHomePage": false
-        },
-        {
             "name": "Phone",
             "fr_FR__name": "Téléphone",
             "cs_CZ__name": "Telefon",
@@ -219,29 +208,6 @@
         },
 
         {
-            "name": "Bank",
-            "fr_FR__name": "Wallet",
-            "en_US__name": "Wallet",
-            "cs_CZ__name": "Wallet",
-            "de_DE__name": "Wallet",
-            "pl_PL__name": "Wallet",
-            "es_ES__name": "Wallet",
-            "icons": "/html/static/img/icons_app/banco.png",
-            "routeName": "bank",
-            "inHomePage": false
-        },
-        {
-            "name": "Bourse",
-            "fr_FR__name": "Bourse",
-            "cs_CZ__name": "Burza",
-            "en_US__name": "Stock Market",
-            "de_DE__name": "Börse",
-            "es_ES__name": "Bolsa",
-            "icons": "/html/static/img/icons_app/bourse1.png",
-            "routeName": "bourse",
-            "enabled": true
-        },
-        {
             "name": "Camera",
             "fr_FR__name": "Photo",
             "cs_CZ__name": "Fotoaparát",
@@ -252,34 +218,14 @@
             "icons": "/html/static/img/icons_app/photo.png",
             "routeName": "photo"
         },
-        {
-            "name": "Reddit",
-            "fr_FR__name": "Reddit",
-            "en_US__name": "Reddit",
-            "de_DE__name": "Reddit",
-            "pl_PL__name": "Reddit",
-            "es_ES__name": "Reddit",
-            "icons": "/html/static/img/icons_app/reddit.png",
-            "routeName": "tchat"
-        },
-        {
-            "name": "Notes",
-            "fr_FR__name": "Notes ",
-            "en_US__name": "Notes ",
-            "de_DE__name": "Notizen ",
-            "pl_PL__name": "Notatki ",
-            "es_ES__name": "Notas ",
-            "routeName": "notes",
-            "icons": "/html/static/img/icons_app/notes.png"
 
-        },
         {
             "name": "9GAG",
             "icons": "/html/static/img/icons_app/9gag.png",
             "routeName": "9gag"
         }
     ],
-    "defaultLanguage": "en_US",
+    "defaultLanguage": "fr_FR",
     "language": {
         "fr_FR": {
             "NAME": "Français",
