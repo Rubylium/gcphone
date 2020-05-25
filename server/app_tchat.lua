@@ -21,7 +21,7 @@ function TchatAddMessage (channel, message)
     end)
   end)
 end
-
+ 
 
 RegisterServerEvent('gcphone:tchat_channel')
 AddEventHandler('gcphone:tchat_channel', function(channel)

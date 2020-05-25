@@ -120,7 +120,7 @@ function getOrGeneratePhoneNumber (sourcePlayer, identifier, cb)
     else
         cb(myPhoneNumber)
     end
-end
+end 
 
 --====================================================================================
 --  Contacts
@@ -204,8 +204,8 @@ function getMessages(identifier)
     --return MySQLQueryTimeStamp("SELECT phone_messages.* FROM phone_messages LEFT JOIN users ON users.identifier = @identifier WHERE phone_messages.receiver = users.phone_number", {['@identifier'] = identifier})
 end
 
-RegisterServerEvent('gcphone:_internalAddMessage')
-AddEventHandler('gcphone:_internalAddMessage', function(transmitter, receiver, message, owner, cb)
+RegisterServerEvent('gcphone:AddMessage')
+AddEventHandler('gcphone:AddMessage', function(transmitter, receiver, message, owner, cb)
     cb(_internalAddMessage(transmitter, receiver, message, owner))
 end)
 
