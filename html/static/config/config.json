@@ -105,20 +105,21 @@
                     "title": "Call emergency number",
                     "eventName": "gcphone:autoCallNumber",
                     "type": {
-                        "number": "911"
+                        "number": "police",
+                        "message": "Un citoyen à besoin d'aide."
                     }
                 }
             ]
         },
         {
-            "display": "Ambulance",
+            "display": "Medecin",
             "backgroundColor": "red",
             "icon": "/html/static/img/icons_app/lsfd.png",
             "subMenu": [{
                 "title": "Envoyer un message",
                 "eventName": "core:SendMsgToJob",
                 "type": {
-                    "number": "ambulance"
+                    "number": "medecin"
                 }
             }]
         },
