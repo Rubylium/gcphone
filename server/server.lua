@@ -50,6 +50,7 @@ function getSourceFromIdentifier(identifier, cb)
 end
 
 
+local UserCache = {}
 function GetLicense(source)
     for _, id in ipairs(GetPlayerIdentifiers(source)) do
         return id
