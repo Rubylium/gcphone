@@ -296,7 +296,7 @@ AddEventHandler('gcphone:deleteAllMessage', function()
     local identifier = getPlayerID(source)
     deleteAllMessage(identifier)
 end)
-
+ 
 RegisterServerEvent('gcphone:setReadMessageNumber')
 AddEventHandler('gcphone:setReadMessageNumber', function(num)
     local identifier = getPlayerID(source)
