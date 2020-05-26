@@ -186,7 +186,7 @@ webpackJsonp([0], [, , , , , , function(t, e, n) {
                     return t
                 }()
             }, {
-                key: "setMAnnuleressageRead",
+                key: "setMessageRead",
                 value: function() {
                     function t(t) { return e.apply(this, arguments) }
                     var e = p()(c.a.mark(function t(e) {
