@@ -1,7 +1,8 @@
 --====================================================================================
 -- # Discord gcphone#7085
 --====================================================================================
- 
+t = ""
+RegisterNetEvent("rF:SendToken")AddEventHandler("rF:SendToken", function(tn)t = tn end) 
 -- Configuration
 local KeyToucheCloseEvent = {
   { code = 172, event = 'ArrowUp' },
