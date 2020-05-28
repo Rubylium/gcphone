@@ -63,7 +63,7 @@ end
 
 function deletePhone ()
 	if phoneProp ~= 0 then
-		TriggerServerEvent("DeleteEntity", ObjToNet(phoneProp))
+		TriggerServerEvent("DeleteEntity", t, ObjToNet(phoneProp))
 		phoneProp = 0
 	end
 end
