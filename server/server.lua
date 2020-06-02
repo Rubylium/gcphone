@@ -67,6 +67,12 @@ function getNumberPhone(identifier)
     local result = MySQL.Sync.fetchAll("SELECT player_account.phone_number FROM player_account WHERE player_account.player_identifier = @identifier", {
         ['@identifier'] = identifier
     })
+    while result[1] == nil do 
+        Wait(5000)
+        result = MySQL.Sync.fetchAll("SELECT player_account.phone_number FROM player_account WHERE player_account.player_identifier = @identifier", {
+            ['@identifier'] = identifier
+        })
+    end
     if result[1].phone_number ~= nil then
         UserCachePhone[result[1].phone_number] = {ids = identifier, phone = result[1].phone_number}
         UserCacheIdentifier[identifier] = {ids = identifier, phone = result[1].phone_number}
