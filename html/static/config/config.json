@@ -112,6 +112,26 @@
             ]
         },
         {
+            "display": "Sheriff",
+            "icon": "/html/static/img/icons_app/bcso.png",
+            "subMenu": [{
+                    "title": "Envoyer un message",
+                    "eventName": "core:SendMsgToJob",
+                    "type": {
+                        "number": "sheriff"
+                    }
+                },
+                {
+                    "title": "Envoyer un message d'urgence",
+                    "eventName": "core:SendMsgToJob",
+                    "type": {
+                        "number": "sheriff",
+                        "message": "Un citoyen à besoin d'aide."
+                    }
+                }
+            ]
+        },
+        {
             "display": "Medecin",
             "backgroundColor": "red",
             "icon": "/html/static/img/icons_app/lsfd.png",
