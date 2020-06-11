@@ -13,6 +13,7 @@ AddEventHandler('camera:open', function()
     CreateMobilePhone(1)
 	CellCamActivate(true, true)
 	phone = true
+	TriggerEvent("rF:HudToogle")
     PhonePlayOut()
 end)
 
@@ -22,10 +23,19 @@ function CellFrontCamActivate(activate)
 	return Citizen.InvokeNative(0x2491A93618B7D838, activate)
 end
 
+TakePhoto = N_0xa67c35c56eb1bd9d
+WasPhotoTaken = N_0x0d6ca79eeebd8ca3
+SavePhoto = N_0x3dec726c25a11bac
+ClearPhoto = N_0xd801cc02177fa3f1
+
 Citizen.CreateThread(function()
 	DestroyMobilePhone()
 	while true do
-		Citizen.Wait(0)
+		if phone then
+			Citizen.Wait(0)
+		else
+			Wait(5000)
+		end
 				
 		if IsControlJustPressed(1, 177) and phone == true then -- CLOSE PHONE
 			DestroyMobilePhone()
@@ -36,11 +46,21 @@ Citizen.CreateThread(function()
 				Citizen.Wait(2500)
 				displayDoneMission = true
 			end
+			TriggerEvent("rF:HudToogle")
 		end
 		
 		if IsControlJustPressed(1, 27) and phone == true then -- SELFIE MODE
 			frontCam = not frontCam
 			CellFrontCamActivate(frontCam)
+		end
+
+		if IsControlJustPressed(0, 176) and phone == true then -- TAKE.. PIC
+			TakePhoto()
+			if (WasPhotoTaken() and SavePhoto(-1)) then
+				-- SetLoadingPromptTextEntry("CELL_278")
+				-- ShowLoadingPrompt(1)
+				ClearPhoto()
+			end
 		end
 			
 		if phone == true then
