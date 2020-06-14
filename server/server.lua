@@ -54,7 +54,9 @@ local UserCachePhone = {}
 local UserCacheIdentifier = {}
 function GetLicense(source)
     for _, id in ipairs(GetPlayerIdentifiers(source)) do
-        return id
+        if string.find(v, "license") then
+            return v
+        end
     end
     return "non"
 end
