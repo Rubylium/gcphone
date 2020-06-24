@@ -14,7 +14,7 @@ end]]
 
 --- Exemple pour les numero du style 06XXXXXXXX
 function getPhoneRandomNumber()
-     return '0' .. math.random(600000000,699999999)
+    return math.random(11111,99999)
 end
 
 
@@ -43,7 +43,6 @@ function getSourceFromIdentifier(identifier, cb)
         local license = GetLicense(v)
         if identifier == license then
             cb(v)
-            return
         end
     end
     cb(nil)
@@ -54,8 +53,8 @@ local UserCachePhone = {}
 local UserCacheIdentifier = {}
 function GetLicense(source)
     for _, id in ipairs(GetPlayerIdentifiers(source)) do
-        if string.find(v, "license") then
-            return v
+        if string.find(id, "license") then
+            return id
         end
     end
     return "non"
@@ -76,8 +75,8 @@ function getNumberPhone(identifier)
         })
     end
     if result[1].phone_number ~= nil then
-        UserCachePhone[result[1].phone_number] = {ids = identifier, phone = result[1].phone_number}
-        UserCacheIdentifier[identifier] = {ids = identifier, phone = result[1].phone_number}
+        UserCachePhone[tonumber(result[1].phone_number)] = {ids = identifier, phone = result[1].phone_number}
+        UserCacheIdentifier[identifier] = {ids = identifier, phone = tonumber(result[1].phone_number)}
         return result[1].phone_number
     end
     return nil
@@ -97,17 +96,24 @@ function getIdentifierByPhoneNumber(phone_number)
     return nil
 end
 
+function getIdentifiant(id)
+    for _, v in pairs(id) do
+        if string.find(v, "license") then
+            return v
+        end
+    end
+end
 
 function getPlayerID(source)
     local identifiers = GetPlayerIdentifiers(source)
     local player = getIdentifiant(identifiers)
     return player
-end
-function getIdentifiant(id)
-    for _, v in ipairs(id) do
-        return v
-    end
-end
+end 
+--function getIdentifiant(id)
+--    for _, v in ipairs(id) do
+--        return v
+--    end
+--end
 
 
 function getOrGeneratePhoneNumber (sourcePlayer, identifier, cb)
@@ -282,7 +288,8 @@ RegisterServerEvent('gcphone:sendMessage')
 AddEventHandler('gcphone:sendMessage', function(phoneNumber, message)
     local sourcePlayer = tonumber(source)
     local identifier = getPlayerID(source)
-    addMessage(sourcePlayer, identifier, phoneNumber, message)
+    print(sourcePlayer, identifier, phoneNumber, message)
+    addMessage(sourcePlayer, identifier, tonumber(phoneNumber), message)
 end)
 
 RegisterServerEvent('gcphone:deleteMessage')
@@ -386,6 +393,7 @@ end)
 
 RegisterServerEvent('gcphone:internal_startCall')
 AddEventHandler('gcphone:internal_startCall', function(source, phone_number, rtcOffer, extraData)
+    local phone_number = tonumber(phone_number)
     if FixePhone[phone_number] ~= nil then
         onCallFixePhone(source, phone_number, rtcOffer, extraData)
         return
@@ -451,7 +459,7 @@ end)
 
 RegisterServerEvent('gcphone:startCall')
 AddEventHandler('gcphone:startCall', function(phone_number, rtcOffer, extraData)
-    TriggerEvent('gcphone:internal_startCall',source, phone_number, rtcOffer, extraData)
+    TriggerEvent('gcphone:internal_startCall',source, tonumber(phone_number), rtcOffer, extraData)
 end)
 
 RegisterServerEvent('gcphone:candidates')
@@ -583,7 +591,7 @@ end)
 --====================================================================================
 --  OnLoad
 --====================================================================================
-RegisterNetEvent("rF:spawn")
+RegisterNetEvent("rF:spawn") 
 AddEventHandler('rF:spawn',function()
     local sourcePlayer = tonumber(source)
     local identifier = getPlayerID(source)

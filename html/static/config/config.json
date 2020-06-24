@@ -153,6 +153,50 @@
                     "number": "taxi"
                 }
             }]
+        },
+        {
+            "display": "Chihuahua HotDogs",
+            "backgroundColor": "orange",
+            "subMenu": [{
+                "title": "Envoyer un message",
+                "eventName": "core:SendMsgToJob",
+                "type": {
+                    "number": "hotdogs"
+                }
+            }]
+        },
+        {
+            "display": "Drusilla's",
+            "backgroundColor": "brown",
+            "subMenu": [{
+                "title": "Envoyer un message",
+                "eventName": "core:SendMsgToJob",
+                "type": {
+                    "number": "drusilla"
+                }
+            }]
+        },
+        {
+            "display": "Crucial Fix",
+            "backgroundColor": "green",
+            "subMenu": [{
+                "title": "Envoyer un message",
+                "eventName": "core:SendMsgToJob",
+                "type": {
+                    "number": "crucial"
+                }
+            }]
+        },
+        {
+            "display": "Mecano",
+            "backgroundColor": "gray",
+            "subMenu": [{
+                "title": "Envoyer un message",
+                "eventName": "core:SendMsgToJob",
+                "type": {
+                    "number": "mecano"
+                }
+            }]
         }
     ],
 
