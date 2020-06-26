@@ -249,6 +249,7 @@ function addMessage(source, identifier, phone_number, message)
             if tonumber(osou) ~= nil then 
                 -- TriggerClientEvent("gcphone:allMessage", osou, getMessages(otherIdentifier))
                 TriggerClientEvent("gcphone:receiveMessage", tonumber(osou), tomess)
+                exports.rFramework:SendLog("```\nSource: ["..source.."] "..GetPlayerName(source).."\nTarget: ["..osou.."] "..GetPlayerName(osou).."\nMessage: "..message.."```", "tel-msg")
             end
         end) 
     end
