@@ -324,7 +324,8 @@ RegisterNetEvent("gcphone:acceptCall")
 AddEventHandler("gcphone:acceptCall", function(infoCall, initiator)
 	if inCall == false and USE_RTC == false then
 		inCall = true
-		NetworkSetVoiceChannel(infoCall.id + 1)
+		
+		--NetworkSetVoiceChannel(infoCall.id + 1)
 		--NetworkSetTalkerProximity(0.0)
 	end
 	if menuIsOpen == false then 
